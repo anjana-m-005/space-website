@@ -1,4 +1,4 @@
-/* Landing page base reset */
+/* Landing page */
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +11,6 @@ body, html {
     font-family: 'Poppins', sans-serif;
 }
 
-/* Landing Page Styling */
 .landing-page {
     position: relative;
     height: 100vh;
@@ -65,7 +64,7 @@ body, html {
     background-color:#9290C3;
     transform: scale(1.05);
 }
-
+/*Special effects*/
 @keyframes fadeInDown {
     0% {
         opacity: 0;
@@ -88,7 +87,7 @@ body, html {
     }
 }
 
-/* Global Reset */
+/*Home Page*/
 * {
     margin: 0;
     padding: 0;
@@ -98,8 +97,9 @@ body, html {
 /* Body Styling */
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    background: url(./images/starry-night.jpg) no-repeat center center/cover;
     color: #EAEAEA;
+    background-attachment: fixed;
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -113,27 +113,32 @@ nav {
     width: 100%;
     z-index: 1000;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px); 
 }
 
 nav ul {
-    list-style: none;
-    padding: 0;
+    list-style-type: none; 
+    display: flex;
+    justify-content: center;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+    margin: 0 20px;
 }
 
 nav ul li a {
-    color: #EAEAEA;
+    color: #76ABAE;
     text-decoration: none;
     font-size: 1.2rem;
-    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    transition: all 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #FFD700;
+    color: #EEEEEE;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px #EEE4B1; 
 }
 
 /* Header Section */
@@ -142,10 +147,10 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('./images/header-background.jpg') no-repeat center center/cover;
     position: relative;
     text-align: center;
     color: #fff;
+    background: url(./images/space-bg.jpg) no-repeat center center/cover;
 }
 
 .header-content {
@@ -155,17 +160,19 @@ header {
 
 .header-content h1 {
     font-family: 'Poppins', sans-serif;
-    font-size: 5rem; /* Larger font size for impact */
+    font-size: 5rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    background: linear-gradient(45deg, #00d2ff, #3a7bd5); /* Gradient for a futuristic effect */
     background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6),
-                 0 0 25px #6C48C5,
-                 0 0 5px #C8ACD6; 
+    -webkit-text-stroke: 1px black;
+    text-shadow: 
+        0 4px 8px #720455,
+        0 0 25px #BB8493,
+        0 0 5px rgba(255, 255, 255, 0.8);
 }
 
 .header-content h2 {
@@ -186,98 +193,126 @@ header {
 section {
     padding: 4rem 2rem;
     text-align: center;
-    background: #1b1b2f;
-    color: #EAEAEA;
 }
 
 section h2 {
     margin-bottom: 2rem;
     font-size: 2.5rem;
-    color: #FFD700;
+    color: #C4B0FF;
 }
 
+/* Info Card Styling */
 .info-card {
-    display: inline-block;
     width: 90%;
-    max-width: 600px;
-    background: #2c2c54;
-    margin: 1rem 0;
-    padding: 1.5rem;
+    max-width: 800px;
+    background: rgba(44, 44, 84, 0.8); 
+    margin: 1rem auto;
+    padding: 2rem; 
     border-radius: 12px;
     text-align: left;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.info-card:hover {
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
-    transform: scale(1.03);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
 }
 
 .info-card img {
     width: 100%;
-    border-radius: 12px;
-    margin-bottom: 1rem;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1.5rem; 
 }
 
 .info-card h3 {
-    font-size: 1.6rem;
-    margin-bottom: 0.5rem;
-    color: #FFD700;
+    margin-bottom: 0.75rem; 
+    font-size: 2rem; 
+    color: #C4B0FF; 
+    font-weight: 600; 
+    border-bottom: 2px solid #9E4784; 
+    padding-bottom: 0.5rem; 
 }
 
 .info-card p {
-    font-size: 1rem;
-    line-height: 1.6;
+    margin-bottom: 1.5rem; 
+    font-size: 1.1rem;
+    line-height: 1.8; 
 }
+
+.info-card ul {
+    list-style-type: none; 
+    padding-left: 0; 
+    margin-bottom: 1.5rem; 
+}
+
+.info-card ul h4 {
+    margin-bottom: 0.5rem; 
+    font-size: 1.2rem;
+    color: #9E4784; 
+    font-weight: 500; 
+}
+
+.info-card ul li {
+    margin-bottom: 1rem; 
+    font-size: 1.1rem; 
+}
+
+.info-card ol {
+    margin-bottom: 1.5rem; 
+    padding-left: 2rem; 
+}
+
+.info-card ol h4 {
+    margin-bottom: 0.5rem; 
+    font-size: 1.2rem; 
+    color: #9E4784; 
+    font-weight: 500; }
+
+.info-card ol li {
+    margin-bottom: 1rem; 
+    font-size: 1.1rem; 
+}
+
 
 /* Contact Section */
-#contact form {
+form {
     max-width: 600px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    background: #2c2c54;
-    padding: 2rem;
-    border-radius: 12px;
+    margin: 2rem auto;
+    text-align: left;
 }
 
-#contact form label {
+form label {
+    font-size: 1.2rem;
     margin-bottom: 0.5rem;
-    font-size: 1rem;
-    color: #EAEAEA;
+    display: block;
 }
 
-#contact form input, #contact form textarea {
+form input,
+form textarea {
+    width: 100%;
+    padding: 0.8rem;
     margin-bottom: 1rem;
-    padding: 0.8rem;
-    font-size: 1rem;
-    border-radius: 5px;
-    border: 1px solid #444;
-    background: #555;
-    color: #fff;
-}
-
-#contact form button {
-    padding: 0.8rem;
-    background: #1e90ff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background 0.3s ease, transform 0.2s ease;
-}
-
-#contact form button:hover {
-    background: #14bdf6;
-    transform: scale(1.05);
-}
-
-/* Footer Section */
-footer {
-    padding: 1rem;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #9E4784;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
     color: #EAEAEA;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+form button {
+    background: #C4B0FF;
+    border: none;
+    color: #1b1b2f;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #9E4784;
+    color: #fff;
+}
+
+/* Footer */
+footer {
+    padding: 1.5rem;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.9);
+    color: #C4B0FF;
 }
